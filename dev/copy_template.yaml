@@ -1,0 +1,17 @@
+---
+- name: create a file with content and copy the file to config it
+  hosts: db
+  tasks:
+   - name: create a file with content
+     copy:
+      content: |
+       hey this is a file
+      dest: /tmp/hosts
+   - name: ovwrite the file with the actual config
+     copy:
+      src: /home/ansible/dev/helloworld.j2
+      dest: /tmp/hosts
+#   - name: ovwrite the file with value
+#     template:
+#      src: /home/ansible/dev/helloworld
+#      dest: /tmp/hosts

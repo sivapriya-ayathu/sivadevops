@@ -1,0 +1,11 @@
+[db]
+node3
+[monitor]
+node4
+[wegrow:children]
+db
+monitor
+[wegrow:vars]
+localvar=/home/ansible/localvariable
+optvar=/opt/localvariable
+path1=/opt

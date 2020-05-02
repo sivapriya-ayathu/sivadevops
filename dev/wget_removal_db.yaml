@@ -1,0 +1,15 @@
+---
+- name: Uninstall wget when ntp is present
+  hosts: db
+  tasks:
+   - name: whether the package wget is present or not
+     command: rpm -qa wget
+     register: output
+   - debug:
+      var: output
+   - name: uninstall ntp
+     yum:
+      name: ntp
+      state: absent
+     when: output.stdout != ""
+  

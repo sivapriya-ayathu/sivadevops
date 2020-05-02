@@ -1,0 +1,11 @@
+---
+- name: create user devops and password devposking
+  hosts: monitor
+  vars_files:
+   - vault.yml
+  tasks:
+   - name: User creation
+     user:
+      name: devops
+      password: "{{ pw_devops | password_hash('sha512') }}"
+      state: present

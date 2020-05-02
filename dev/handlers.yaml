@@ -1,0 +1,21 @@
+---
+- name: Installting httpd package and restart the daemon once the config is edited
+  hosts: db
+  tasks:
+   - name: Install httpd
+     yum:
+      name: httpd
+      state: latest
+   - name: change conf file of httpd
+     copy:
+      content: |
+       "Httpd package is installed and the config is changed"
+      dest: /opt/httpd.conf
+     notify:
+      - restart httpd
+  handlers:
+   - name: restart httpd
+     service:
+      name: httpd
+      state: restarted
+

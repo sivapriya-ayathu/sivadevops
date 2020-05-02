@@ -1,0 +1,9 @@
+---
+- name: Install
+  yum: name=httpd state=latest
+- name: Adding content
+  copy:
+   src: siva/
+   dest: /var/www/html/
+  notify: 
+     - restart httpd

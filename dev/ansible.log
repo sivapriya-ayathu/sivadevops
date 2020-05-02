@@ -1,0 +1,19 @@
+2020-04-25 09:02:07,599 p=25290 u=ansible n=ansible | PLAY [configuring web server] *********************************************************************************
+2020-04-25 09:02:07,611 p=25290 u=ansible n=ansible | TASK [Gathering Facts] ****************************************************************************************
+2020-04-25 09:02:08,747 p=25290 u=ansible n=ansible | ok: [node3]
+2020-04-25 09:02:08,759 p=25290 u=ansible n=ansible | TASK [myfirewall : install firewalld] *************************************************************************
+2020-04-25 09:02:09,757 p=25290 u=ansible n=ansible | ok: [node3]
+2020-04-25 09:02:09,769 p=25290 u=ansible n=ansible | TASK [myfirewall : start firewalld service] *******************************************************************
+2020-04-25 09:02:11,317 p=25290 u=ansible n=ansible | changed: [node3]
+2020-04-25 09:02:11,328 p=25290 u=ansible n=ansible | TASK [myfirewall : open ports in firewalld] *******************************************************************
+2020-04-25 09:02:12,476 p=25290 u=ansible n=ansible | ok: [node3]
+2020-04-25 09:02:12,488 p=25290 u=ansible n=ansible | TASK [myvhost : install httpd] ********************************************************************************
+2020-04-25 09:02:21,628 p=25290 u=ansible n=ansible | ok: [node3]
+2020-04-25 09:02:21,639 p=25290 u=ansible n=ansible | TASK [myvhost : start httpd service] **************************************************************************
+2020-04-25 09:02:23,254 p=25290 u=ansible n=ansible | changed: [node3]
+2020-04-25 09:02:23,267 p=25290 u=ansible n=ansible | TASK [myvhost : copy the html file] ***************************************************************************
+2020-04-25 09:02:24,300 p=25290 u=ansible n=ansible | ok: [node3]
+2020-04-25 09:02:24,312 p=25290 u=ansible n=ansible | TASK [myvhost : vhost template file] **************************************************************************
+2020-04-25 09:02:24,979 p=25290 u=ansible n=ansible | ok: [node3]
+2020-04-25 09:02:24,981 p=25290 u=ansible n=ansible | PLAY RECAP ****************************************************************************************************
+2020-04-25 09:02:24,981 p=25290 u=ansible n=ansible | node3                      : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

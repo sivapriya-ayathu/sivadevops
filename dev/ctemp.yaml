@@ -1,0 +1,9 @@
+---
+- name: configuration 
+  hosts: db
+  tasks:
+   - name: copy config
+     template:
+      src: /home/ansible/dev/helloworld
+      dest: /etc/
+...

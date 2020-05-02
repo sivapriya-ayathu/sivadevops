@@ -1,0 +1,12 @@
+---
+- name: check httpd installed or not
+  hosts: monitor
+  #ignore_errors: yes
+  tasks:
+   - name: check via rpm
+     command: rpm -qa httpd
+     register: out1
+   - debug:
+      vr: o
+   - debug:
+      var: out1.stdout

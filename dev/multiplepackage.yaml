@@ -1,0 +1,19 @@
+---
+- name: Installing multiple package
+  hosts: monitor
+  tasks:
+   - name: Install wget
+     yum:
+      name: wget
+      state: present
+   - name: Install httpd
+     yum:
+      name: httpd
+      state: present
+- name: Install ntp
+  hosts: db
+  tasks:
+   - name: Install ntp
+     yum:
+      name: ntp
+      state: present

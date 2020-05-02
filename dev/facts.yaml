@@ -1,0 +1,10 @@
+---
+- name: dynamic entry of ip address and hostname
+  hosts: db
+  tasks:
+   - name: hostname and ip display
+     copy: 
+      content: |
+       {{ansible_default_ipv4.address}} {{ansible_hostname}} {{ansible_memfree_mb}}
+      dest: /etc/motd
+    

@@ -1,0 +1,6 @@
+---
+- name: Installing Apache package
+  hosts: all
+  roles:
+    - webserver 
+

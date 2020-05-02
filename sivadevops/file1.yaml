@@ -1,0 +1,10 @@
+---
+- name: copy the file
+  hosts: monitor
+  tasks:
+  - name: copy the file
+    copy:
+     content: |
+      <IP><HOSTNAME><VHOST>
+     dest: /home/ansible1/sampletext
+     

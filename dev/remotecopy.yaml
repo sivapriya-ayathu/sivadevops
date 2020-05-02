@@ -1,0 +1,22 @@
+---
+- name: Creating a dir,creating a file with content,copy to /opt
+  hosts: monitor
+  tasks:
+   - name: Creating a dir devops
+     file:
+      path: /home/ansible/devops
+      state: directory
+   - name: Creating a file
+     copy:
+      #content: |
+      # HI I AM PART OF DEVOPSCLASS
+      dest: /home/ansible/devops/devopsclass
+      content: |
+       HI I AM PART OF DEVOPSCLASS
+   - name: Copying the file to /opt
+     copy:
+      src: /home/ansible/devops/devopsclass
+      dest: /opt
+      remote_src: yes
+      
+  

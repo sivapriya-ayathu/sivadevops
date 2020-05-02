@@ -1,0 +1,12 @@
+---
+- name: Testing the check mode 
+  hosts: node3
+  tasks:
+   - name: Create a file
+     file:
+      path: /home/ansible/check_mode
+      state: touch
+   - name: Service Restart
+     service:
+      name: httpd
+      state: started

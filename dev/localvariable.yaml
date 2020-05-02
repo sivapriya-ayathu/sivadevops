@@ -1,0 +1,18 @@
+---
+- name: Copy the content to the destination
+  hosts: wegrow
+  tasks:
+   - name: Creating a file
+     file:
+      path: "{{ localvar }}"
+      state: touch
+   - name: Copy it to the destination /tmp
+     copy:
+      src: "{{ localvar }}"
+      dest: "{{ path1 }}"
+      remote_src: yes
+   - name: Write the content to the file
+     copy:
+      content: |
+       "Hey I am good"
+      dest: "{{ optvar }}"

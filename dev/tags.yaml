@@ -1,0 +1,32 @@
+---
+- name: creating a user called anu,seema,sivapriya
+  hosts: monitor
+  tasks:
+   - name: Create anu
+     user:
+      name: anu
+      state: present
+     tags:
+      - anu
+   - name: Create seema
+     user:
+      name: seema
+      state: present
+     tags:
+      - seema
+   - name: Create sivapriya
+     user:
+      name: sivapriya
+      state: present
+     tags:
+      - siva
+- name: Creating a file with ownership anu
+  hosts: monitor
+  tags:
+   - anu1
+  tasks:
+   - name: Creating a file
+     file:
+      path: /home/anu/megastar
+      state: touch
+      owner: anu

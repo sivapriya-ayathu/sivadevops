@@ -1,0 +1,11 @@
+---
+- name: creating and updating ip , fqdn , hostname
+  hosts: all
+  tasks:
+   - name: Create the file with content
+     copy:
+      content: |
+       {{ansible_default_ipv4.address}} {{ansible_fqdn}} {{ansible_hostname}}
+      dest: /opt/hosts
+
+      

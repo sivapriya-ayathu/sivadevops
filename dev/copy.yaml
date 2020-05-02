@@ -1,0 +1,19 @@
+---
+- name: File create, copy 
+  hosts: localhost
+  check_mode: no
+  tasks:
+   - name: creating a file
+     file:
+      path: /home/ansible/dev/host1
+      state: touch
+- name: Copy the file from local to destination
+  hosts: monitor
+  tasks:
+   - name: copy the file
+     copy:
+      src: /home/ansible/dev/host1
+      dest: /tmp
+      owner: ansible
+      group: ansible
+     

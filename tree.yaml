@@ -1,0 +1,20 @@
+---
+- name: Installing tree package and restart the deamon with handler
+  hosts: monitor
+  tasks:
+  - name: Install tree
+    yum:
+     name: tree
+     state: latest
+  - name: change the conf file of tree
+    copy: 
+     content: |
+      "Tree package is installed with conf change.hope it works"
+     dest: /opt/tree.conf
+    notify:
+     - deamon restart
+  handlers:
+   - name: deamon restart
+     service:
+      name: tree
+      state: restarted

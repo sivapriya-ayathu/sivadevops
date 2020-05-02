@@ -1,0 +1,11 @@
+---
+- name: Display the output
+  hosts: all
+  tasks:
+   - name: Install the package
+     yum:
+      name: tree
+      state: present
+     register: output
+   - debug:
+      var: output

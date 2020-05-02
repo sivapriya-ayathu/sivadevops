@@ -1,0 +1,10 @@
+---
+- name: creating a file devops
+  hosts: db
+  tasks:
+   - name: Create file
+     file:
+      path: /home/ansible/devops
+      state: touch
+      owner: ansible
+      group: ansible

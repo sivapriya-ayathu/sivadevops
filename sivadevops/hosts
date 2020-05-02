@@ -1,0 +1,16 @@
+[db]
+node3
+[monitor]
+node4
+[wegrow:children]
+ db
+ monitor
+ [monitor:vars]
+ dirpath=/home/ansible1/devops
+ localvar=/home/ansible1/devops/localvariable
+ path1=/opt
+
+
+
+
+

@@ -1,0 +1,10 @@
+[db]
+node3
+[monitor]
+node4
+[wegrow:children]
+ db
+  monitor
+   [monitor:vars]
+    path=/home/ansible1/devops
+
