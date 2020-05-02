@@ -1,9 +1,0 @@
----
-- name: install httpd via roles in all services
-  hosts: all
-  roles:
-   - import
-   - include:
-      installhttpd.yaml
-      service.yaml
-

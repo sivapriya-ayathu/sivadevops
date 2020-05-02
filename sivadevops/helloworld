@@ -1,2 +1,0 @@
-{{ansible_memfree_mb}} {{ansible_processor}} {{ansible_bios_version}}
-
